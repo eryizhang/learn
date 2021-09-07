@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<textarea  th:text="${formBean.welcome}"/>
+<form action="#" th:action="@{/hello/send}" th:object="${formBean}" method="post">
+    name: <textarea th:field="*{name}" />
+    age: <textarea th:field="*{age}" />
+    mainAddr: <textarea th:field="*{mainAddr.address}" />
+    addrs1: <textarea th:field="*{addrs[0].address}" />
+    addrs2: <textarea th:field="*{addrs[1].address}" />
+    addrs3: <textarea th:field="*{addrs[2].address}" />
+    <input type="submit"/>
+</form>
+</body>
+</html>
